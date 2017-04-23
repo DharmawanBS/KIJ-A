@@ -56,7 +56,7 @@ def encrypt() :
         xortext = xor(int(binarytext,2),int(k0,2))
         additionmod = addition_modulus(xortext,int(k1,2),modulus)
         encrypted = '{0:08b}'.format(additionmod)
-        if len(encrypted) !=64 :
+        for j in range(0,64-len(encrypted)) :
             cipher += '0'
         cipher += encrypted
         i+=8
